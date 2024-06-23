@@ -27,7 +27,7 @@ const upload = multer({ storage: storage })
 
 
 router.post('/', upload.single('file'), function (req, res) {
- console.log(req.body.ip)
+//  console.log(req.body.ip)
   fs.readdir("image/",(err, files) => {
     files.forEach(file => {
       cloudinary.v2.uploader.upload(`image/${file}`, {},async(error, result) => {

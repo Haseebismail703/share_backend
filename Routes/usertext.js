@@ -20,7 +20,7 @@ router.get('/:ip',async(req,res)=>{
   
  try {
   const text =  await Text.find({ip : req.params.ip })
-  console.log(req.params.ip)
+  // console.log(req.params.ip)
   res.status(200).send({text : text })
  } catch (error) {
   console.log(error)
