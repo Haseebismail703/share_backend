@@ -6,7 +6,7 @@ import main from './Routes/main.js';
 import mongoose from './db/data.js';
 
 const app = express();
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT  ;
 
 const db = mongoose.connection
 db.on('error',console.error.bind(console,'Error connection'))
