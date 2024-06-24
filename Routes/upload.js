@@ -10,8 +10,6 @@ cloudinary.config({
 });
 
 const router = express.Router()
-
-// Multer configuration
 const storage = multer.diskStorage({});
 
 const upload = multer({
@@ -19,9 +17,9 @@ const upload = multer({
   limits: { fileSize: 1024 * 1024 * 5 }, // 5MB file size limit
 });
 
-// Route to handle file upload
+
 router.post('/', upload.single('file'), async (req, res) => {
-  // console.log(req.body.ip)
+
   try {
     if (!req.file) {
       return res.status(400).json({ message: 'No file uploaded' });
@@ -34,7 +32,6 @@ router.post('/', upload.single('file'), async (req, res) => {
       public_id : result.public_id
     })
     const newfile = await file.save()
-    // console.log(newfile)
 
   } catch (err) {
     console.error(err);
