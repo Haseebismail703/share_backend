@@ -3,9 +3,9 @@ import cors from 'cors';
 import chalk from 'chalk'
 import main from './Routes/main.js';
 import mongoose from './db/data.js';
-
+import 'dotenv/config'
 const app = express();
-const PORT = 5000  ;
+const PORT = process.env.PORT || 3000;
 
 const db = mongoose.connection
 db.on('error',console.error.bind(console,'Error connection'))
