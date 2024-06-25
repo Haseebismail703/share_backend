@@ -2,11 +2,10 @@ import express from 'express'
 let router = express.Router()
 import File from '../models/fileschema.js'
 import cloudinary from 'cloudinary'
-import 'dotenv/config'
 cloudinary.config({
-    cloud_name: process.env.cloud_name,
-    api_key: process.env.api_key,
-    api_secret: process.env.api_secret
+    cloud_name: 'dmlk41njm',
+    api_key: '622964139729985',
+    api_secret: 'VfWsvE8NHNpfdYgpMqAhVf9qppw'
   });
 router.post('/',async(req,res)=>{
     // console.log(ip.address())
