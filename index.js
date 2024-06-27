@@ -15,7 +15,7 @@ db.once('open',()=>{
 
 
 app.use(express.json());
-app.use(cors())
+// app.use(cors())
 
 // app.use(expressIp().getIpInfo())
 app.use(cors({
