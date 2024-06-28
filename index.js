@@ -14,15 +14,17 @@ db.once('open',()=>{
 })
 
 
-app.use(express.json());
-// app.use(cors())
+app.use(express.json())
+const corsOptions = {
+    origin: 'http://localhost:5173', // specify the allowed origin
+    methods: 'GET,POST,PUT,DELETE', // specify the allowed methods
+    allowedHeaders: 'Content-Type,Authorization', // specify the allowed headers
+  };
+  
+  app.use(cors(corsOptions))
 
-// app.use(expressIp().getIpInfo())
-app.use(cors({
-  origin: 'http://localhost:5173/',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-}));
+
+
 
  
 app.use('/api', main);
