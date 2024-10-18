@@ -8,14 +8,14 @@ cloudinary.config({
     api_secret: 'VfWsvE8NHNpfdYgpMqAhVf9qppw'
   });
 router.post('/',async(req,res)=>{
-    // console.log(ip.address())
+    // console.log(req.body)
     try {
     const {_id,public_id} = req.body
     const result = await File.findByIdAndDelete(_id)
     cloudinary.v2.api
     .delete_resources([public_id], 
         { type: 'upload', resource_type: 'image' })
-       
+        res.status(200).send({Message : 'Delete succesfuly'})
     } catch (error) {
         console.log(error) 
         res.status(500).send({Message : error.Message})  

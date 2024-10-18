@@ -36,7 +36,8 @@ router.get('/:ip',async(req,res)=>{
     // console.log(req.body)
     try {
     const {_id} = req.body
-    const result = await Text.findByIdAndDelete(_id)  
+    const result = await Text.findByIdAndDelete(_id) 
+    res.status(200).send({Message : 'Delete succesful'})
     } catch (error) {
         console.log(error) 
         res.status(500).send({Message : error.Message})  

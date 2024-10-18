@@ -3,7 +3,7 @@ import  ShareText  from '../models/textschema.js'
 const router = express.Router()
 
 router.post('/', async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
   
     try {
       const text = await new ShareText({ ...req.body })

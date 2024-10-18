@@ -16,9 +16,9 @@ db.once('open',()=>{
 
 app.use(express.json())
 const corsOptions = {
-    origin: 'https://shareforyou.netlify.app', // specify the allowed origin
-    methods: 'GET,POST,PUT,DELETE', // specify the allowed methods
-    allowedHeaders: 'Content-Type,Authorization', // specify the allowed headers
+    origin: ['https://shareforyou.netlify.app','http://localhost:5173'],
+    methods: 'GET,POST,PUT,DELETE', 
+    allowedHeaders: 'Content-Type,Authorization', 
   };
   
   app.use(cors(corsOptions))
